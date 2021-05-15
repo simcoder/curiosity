@@ -1,0 +1,20 @@
+.client-form {
+  display: grid;
+  padding: 2rem;
+  grid-gap: 1rem;
+  .btn-group {
+    display: grid;
+    grid-gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .client-form {
+    grid-template-columns: 2fr 2fr 1fr;
+    .btn-group {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+  }
+}

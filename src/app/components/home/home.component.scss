@@ -1,0 +1,25 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.content {
+  .content-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .img-wrapper {
+      cursor: pointer;
+      display: grid;
+      margin: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+      .img {
+        width: 100px;
+        height: 100px;
+      }
+      .footer {
+        width: 100px;
+        text-align: center;
+      }
+    }
+  }
+}

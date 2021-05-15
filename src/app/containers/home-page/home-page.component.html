@@ -1,0 +1,7 @@
+<app-home
+  (formSubmit)="onFormSubmit($event)"
+  (enlargeImg)="onEnlargeImgClick($event)"
+  (clearClick)="onClearClick()"
+  [loading]="(data$ | async)?.app?.app?.loadingImages"
+  [images]="(data$ | async)?.app?.app?.images"
+></app-home>

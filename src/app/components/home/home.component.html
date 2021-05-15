@@ -1,0 +1,22 @@
+<mat-toolbar>
+  <button mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>THD</span>
+  <span class="spacer"></span>
+</mat-toolbar>
+<div class="content">
+  <app-client-form (formSubmit)="formSubmit.emit($event)" (clearClick)="clearClick.emit()"></app-client-form>
+  <div class="content-wrapper">
+    <mat-spinner *ngIf="loading"></mat-spinner>
+    <span *ngIf="images?.length === 0">No available images</span>
+    <ng-container *ngFor="let img of images">
+      <div (click)="enlargeImg.emit(img?.img_src)" class="img-wrapper">
+        <img class="img" [attr.src]="img?.img_src" />
+        <span class="footer">{{img?.camera?.full_name}}</span>
+        <span class="footer">{{img?.earth_date}}</span>
+      </div>
+      
+    </ng-container>
+  </div>
+</div>
