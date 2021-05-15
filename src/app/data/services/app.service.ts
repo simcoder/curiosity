@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of, throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Injectable({
@@ -11,11 +11,10 @@ export class AppService {
   apiKey = 'SJtLy0wNppl58fwcHcMcFKo9i4tkASgJlgLSmXkJ';
   constructor(private http: HttpClient) {}
 
-  getImages(date, camera): Observable<any> {
+  getImages(date: string, camera: string): Observable<any> {
     const url = camera
       ? `${this.baseUrl}?earth_date=${date}&camera=${camera}&api_key=${this.apiKey}`
       : `${this.baseUrl}?earth_date=${date}&api_key=${this.apiKey}`;
-    const testUdl = `${this.baseUrl}?earth_date=2015-6-3&&api_key=${this.apiKey}`
     return this.http.get(url).pipe(catchError(this.errorHandl));
   }
 
